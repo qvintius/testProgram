@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>New vopros</title>
+</head>
+<body>
+<form th:method="POST" th:action="@{/voprosy}" th:object="${vopros}">
+  <label for="theme">Enter theme: </label>
+  <input type="text" th:field="*{theme}" id="theme"/>
+  <!--<div style="color: red" th:if="${#fields.hasErrors('theme')}" th:errors="*{theme}">Theme error</div>-->
+  <br/>
+
+  <label for="count">Enter count: </label>
+  <input type="text" th:field="*{count}" id="count"/>
+  <!--<div style="color: red" th:if="${#fields.hasErrors('count')}" th:errors="*{count}">Count error</div>-->
+  <br/>
+
+  <label for="otvety">Enter otvety: </label>
+  <input type="text" th:field="*{otvety}" id="otvety"/>
+  <!--<div style="color: red" th:if="${#fields.hasErrors('otvety')}" th:errors="*{otvety}">Otvety error</div>-->
+  <br/>
+
+  <input type="submit" value="Create!"/>
+</form>
+</body>
+</html>
